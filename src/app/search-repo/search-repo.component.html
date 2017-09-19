@@ -1,0 +1,40 @@
+
+<div  id="search_bar">
+    <input #searchBox [(ngModel)]="username" id="search GitHub" placeholder="Search GitHub" class="search"/>
+    <nav>
+        <!-- <a routerLink="/search_user" routerLinkActive="active" (click)="load_userdata();load_userdata_repos();">Search_User</a> -->
+        <a  (click)="load_repodata()">Search_repoTech</a>
+    </nav>
+    </div>
+    <!-- <button (click)="load_userdata();load_userdata_repos();">Search_user</button>
+      <button   (click)="load_repodata();">Search_repokey</button> -->
+  
+  <div *ngIf="reposkey">
+     
+    <div class="container">
+        <div *ngFor="let repo of reposkey"> <hr>
+            <div class="row">
+              <div class="col-sm-2">
+                <img src="{{repo.owner.avatar_url}}" alt="owner" class="owner">
+              </div>
+              <div class="col-sm-2">
+                 <h4>Id : {{repo.id}} </h4>
+              </div>
+              <div class="col-sm-2">
+                  <h4> Repo-Name : {{repo.name}}</h4>
+              </div>
+              <div class="col-sm-2">
+                  <h4>Forks : {{repo.forks}}</h4>
+              </div>
+              <div class="col-sm-2">
+                  <h4>Size : {{repo.size}}</h4>
+              </div>
+              <div class="col-sm-2">
+                  <h4>Score : {{repo.score}}</h4>
+              </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+  </div>
+  <footer-comp></footer-comp>  

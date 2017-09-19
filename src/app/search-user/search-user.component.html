@@ -1,0 +1,33 @@
+
+<div  id="search_bar">
+  <input #searchBox [(ngModel)]="username" id="search GitHub" placeholder="Search GitHub" class="search"/>
+  <nav>
+      <a routerLinkActive="active" (click)="load_userdata();load_userdata_repos();">Search_User</a>
+      <!-- <a routerLink="/search_repo" routerLinkActive="active" (click)="load_repodata()">Search_repoTech</a> -->
+  </nav>
+  </div>
+  <!-- <button (click)="load_userdata();load_userdata_repos();">Search_user</button>
+    <button   (click)="load_repodata();">Search_repokey</button> -->
+
+  
+  <div *ngIf="userdata ">
+    <div class="container user_detail">
+       <div class="row">
+         <div class="col-sm-6 profile">
+            <img src="{{userdata.avatar_url}}" alt="Image" class="image">
+            <h3>Name : {{userdata.name}}</h3>
+            <h4>followers : {{userdata.followers}}</h4>
+            <h4>Blog : {{userdata.blog}}</h4>
+            <h4>Location : {{userdata.location}}</h4>
+         </div>
+  
+        <div class="col-sm-6 list">
+            <h2>Repo-List</h2>
+            <div *ngFor="let rch-usepo of userrepo; let i=index;" class="repo">
+              {{userrepo[i].name}} : <a href="{{userrepo[i].clone_url}}">Repo_url</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <footer-comp></footer-comp>  

@@ -1,0 +1,21 @@
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+
+.nav
+{
+   text-align: center;
+   
+}
+.navbar-brand {
+	padding: 13px 15px;
+}
+.logo
+{
+    width:150px;
+}
+.form-group
+{
+    margin-top: 5px;
+}
